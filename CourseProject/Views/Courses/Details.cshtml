@@ -1,0 +1,27 @@
+﻿@model IEnumerable<CourseProject.Models.MonHoc>
+@{
+    ViewBag.Title = "Chi tiết khóa học";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-12">
+        <h2>Khóa học: @ViewBag.KhoaHoc</h2>
+    </div>
+</div>
+<hr style="border-top: 3px solid lightgreen;" />
+
+<div class="row">
+    <div class="col-md-4" style="border-right: 2px solid;">
+        <!-- Thêm thanh chắn giữa -->
+        @for (int i = 0; i < Model.Count(); i += 2)
+        {
+            <div>@(i + 1). @Model.ElementAt(i).TenMonHoc</div>
+        }
+    </div>
+    <div class="col-md-4">
+        @for (int i = 1; i < Model.Count(); i += 2)
+        {
+            <div>@(i + 1). @Model.ElementAt(i).TenMonHoc</div>
+        }
+    </div>
+</div>
